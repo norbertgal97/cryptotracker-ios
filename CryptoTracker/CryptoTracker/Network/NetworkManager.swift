@@ -50,14 +50,10 @@ class NetworkManager<Res: Decodable> {
             }
             
             do {
-                let str = String(decoding: data, as: UTF8.self)
-                print(str)
                 let decodedData: Res = try self.decodeResponse(from: data)
                 
                 completionHandler(.successful, decodedData)
             } catch {
-        
-
                 completionHandler(.failure(statusCode: httpResponse.statusCode), nil)
             }
             

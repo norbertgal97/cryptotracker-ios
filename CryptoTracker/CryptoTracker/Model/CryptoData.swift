@@ -19,5 +19,5 @@ struct CryptoData: Identifiable {
     let price: Double?
     let marketCap: Double?
     
-    let image: String
+    let imageUrl: String
 }

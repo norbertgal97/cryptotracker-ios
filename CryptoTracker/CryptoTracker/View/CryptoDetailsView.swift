@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CryptoDetailsView: View {
     let cryptoData: CryptoData
@@ -14,12 +15,12 @@ struct CryptoDetailsView: View {
         VStack {
             Spacer()
             
-            AsyncImage(url: URL(string: cryptoData.image)) { image in
-                image.resizable()
-            } placeholder: {
-                ProgressView()
-            }
-            .frame(width: 100, height: 100, alignment: .center)
+            KFImage(URL(string: cryptoData.imageUrl))
+                .placeholder{
+                    Color.gray
+                }
+                .resizable()
+                .frame(width: 100, height: 100, alignment: .center)
             
             Text(cryptoData.name)
                 .fontWeight(.bold)
@@ -39,7 +40,7 @@ struct CryptoDetailsView: View {
                     Text("Circulating supply: ")
                         .fontWeight(.bold)
                     
-                    if let circulatingSupply = cryptoData.circulatingSupply {
+                    if let circulatingSupply = cryptoData.circulatingSupply, circulatingSupply != -1 {
                         Text(String(circulatingSupply))
                     } else {
                         Text("-")
@@ -50,7 +51,7 @@ struct CryptoDetailsView: View {
                     Text("Total supply: ")
                         .fontWeight(.bold)
                     
-                    if let totalSupply = cryptoData.totalSupply {
+                    if let totalSupply = cryptoData.totalSupply, totalSupply != -1 {
                         Text(String(totalSupply))
                     } else {
                         Text("-")
@@ -61,7 +62,7 @@ struct CryptoDetailsView: View {
                     Text("Max supply: ")
                         .fontWeight(.bold)
                     
-                    if let maxSupply = cryptoData.maxSupply {
+                    if let maxSupply = cryptoData.maxSupply, maxSupply != -1 {
                         Text(String(maxSupply))
                     } else {
                         Text("-")
@@ -72,7 +73,7 @@ struct CryptoDetailsView: View {
                     Text("Price: ")
                         .fontWeight(.bold)
                     
-                    if let price = cryptoData.price {
+                    if let price = cryptoData.price, price != -1 {
                         Text("$\(price, specifier: "%.2f")")
                     } else {
                         Text("-")
@@ -83,7 +84,7 @@ struct CryptoDetailsView: View {
                     Text("Market cap: ")
                         .fontWeight(.bold)
                     
-                    if let marketCap = cryptoData.marketCap {
+                    if let marketCap = cryptoData.marketCap, marketCap != -1 {
                         Text("$\(marketCap, specifier: "%.2f")")
                     } else {
                         Text("-")
@@ -91,7 +92,6 @@ struct CryptoDetailsView: View {
                 }
                 
             }
-            
             
             Spacer()
         }
@@ -110,6 +110,6 @@ struct CryptoDetailsView_Previews: PreviewProvider {
                                                  maxSupply: 21000000,
                                                  price: 50593,
                                                  marketCap: 955936827038,
-                                                 image: NetworkConfig.IMAGE_ENDPOINT_ADDRESS + "1.png"))
+                                                 imageUrl: NetworkConfig.IMAGE_ENDPOINT_ADDRESS + "1.png"))
     }
 }

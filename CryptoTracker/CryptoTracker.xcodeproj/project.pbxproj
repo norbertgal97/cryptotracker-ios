@@ -31,6 +31,7 @@
 		AE77686E276019040037E356 /* StatusDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77686D276019040037E356 /* StatusDTO.swift */; };
 		AE77687027601F320037E356 /* CryptoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77686F27601F320037E356 /* CryptoData.swift */; };
 		AE7768722760263B0037E356 /* QuoteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7768712760263B0037E356 /* QuoteDTO.swift */; };
+		AE7B701B2760AC8C00D73FFC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AE7B701A2760AC8C00D73FFC /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE7B701B2760AC8C00D73FFC /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +185,9 @@
 			dependencies = (
 			);
 			name = CryptoTracker;
+			packageProductDependencies = (
+				AE7B701A2760AC8C00D73FFC /* Kingfisher */,
+			);
 			productName = CryptoTracker;
 			productReference = AE776835275EE2770037E356 /* CryptoTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -211,6 +216,9 @@
 				Base,
 			);
 			mainGroup = AE77682C275EE2770037E356;
+			packageReferences = (
+				AE7B70192760AC8C00D73FFC /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = AE776836275EE2770037E356 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -461,6 +469,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AE7B70192760AC8C00D73FFC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AE7B701A2760AC8C00D73FFC /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE7B70192760AC8C00D73FFC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		AE776843275EE27A0037E356 /* CryptoTracker.xcdatamodeld */ = {

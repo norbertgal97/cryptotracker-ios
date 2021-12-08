@@ -6,31 +6,29 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CryptoListView: View {
     @StateObject var cryptoListVM = CryptoListViewModel()
     
     var body: some View {
         NavigationView {
-            
             List(cryptoListVM.cryptos) { crypto in
-                
-                
                 NavigationLink(destination: CryptoDetailsView(cryptoData: crypto)) {
                     HStack {
-                        AsyncImage(url: URL(string: crypto.image)) { image in
-                            image.resizable()
-                        } placeholder: {
-                            ProgressView()
-                        }
-                        .frame(width: 30, height: 30, alignment: .center)
+                        KFImage(URL(string: crypto.imageUrl))
+                            .placeholder{
+                                Color.gray
+                            }
+                            .resizable()
+                            .frame(width: 30, height: 30, alignment: .center)
                         
                         Text(crypto.name)
                             .fontWeight(.bold)
                         
                         Spacer()
                         
-                        Text("$ \(crypto.price ?? 0.00, specifier: "%.2f")")
+                        Text("$\(crypto.price ?? 0.00, specifier: "%.2f")")
                     }
                 }
             }
@@ -38,15 +36,16 @@ struct CryptoListView: View {
                 cryptoListVM.getCryptoPreviews()
             }
             .navigationBarTitle("Cryptos")
-            .onAppear {
-                cryptoListVM.getCryptoPreviews()
-            }
+            
         }
         .alert(isPresented: $cryptoListVM.showingAlert, content: {
             Alert(title: Text("Error"), message: Text(cryptoListVM.alertDescription), dismissButton: .default(Text("OK")) {
                 print("Dismiss button pressed")
             })
         })
+        .onAppear {
+            cryptoListVM.fetchDataFromDatabase()
+        }
     }
 }
 
