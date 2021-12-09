@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AE776839275EE2770037E356 /* CryptoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE776838275EE2770037E356 /* CryptoTrackerApp.swift */; };
-		AE77683B275EE2770037E356 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE77683A275EE2770037E356 /* ContentView.swift */; };
 		AE77683D275EE27A0037E356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE77683C275EE27A0037E356 /* Assets.xcassets */; };
 		AE776840275EE27A0037E356 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE77683F275EE27A0037E356 /* Preview Assets.xcassets */; };
 		AE776842275EE27A0037E356 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE776841275EE27A0037E356 /* Persistence.swift */; };
@@ -37,7 +36,6 @@
 /* Begin PBXFileReference section */
 		AE776835275EE2770037E356 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE776838275EE2770037E356 /* CryptoTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerApp.swift; sourceTree = "<group>"; };
-		AE77683A275EE2770037E356 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AE77683C275EE27A0037E356 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE77683F275EE27A0037E356 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AE776841275EE27A0037E356 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 				AE776854275EEFA60037E356 /* ViewModel */,
 				AE776853275EEF970037E356 /* View */,
 				AE776838275EE2770037E356 /* CryptoTrackerApp.swift */,
-				AE77683A275EE2770037E356 /* ContentView.swift */,
 				AE77683C275EE27A0037E356 /* Assets.xcassets */,
 				AE776841275EE27A0037E356 /* Persistence.swift */,
 				AE776843275EE27A0037E356 /* CryptoTracker.xcdatamodeld */,
@@ -248,7 +245,6 @@
 				AE776842275EE27A0037E356 /* Persistence.swift in Sources */,
 				AE776861276012B80037E356 /* CryptoListView.swift in Sources */,
 				AE7768672760148A0037E356 /* CryptoListViewModel.swift in Sources */,
-				AE77683B275EE2770037E356 /* ContentView.swift in Sources */,
 				AE776839275EE2770037E356 /* CryptoTrackerApp.swift in Sources */,
 				AE776859275FF8BF0037E356 /* ResponseHandler.swift in Sources */,
 				AE7768722760263B0037E356 /* QuoteDTO.swift in Sources */,
